@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laharika Relangi — Aspiring Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Laharika Relangi — Computer Science Engineering Student & Aspiring Full Stack / Java Developer passionate about Spring Boot, MySQL, and modern web applications.">
+  <meta property="og:title" content="Laharika Relangi — Aspiring Full Stack Developer">
+  <meta property="og:description" content="Computer Science Engineering Student | Java & Spring Boot Developer | Building Practical Web Applications">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="Mine_ige.jpeg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <script>
+    (function() {
+      try {
+        const saved = localStorage.getItem('laharika_theme');
+        if (saved === 'light') {
+          document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      } catch(e) {}
+    })();
+  </script>
+</head>
+<body>
+
+<!-- MAIN C2_DESK ANIMATED BACKGROUND LAYER -->
+<div class="site-bg-desk" id="siteBgDesk" aria-hidden="true">
+  <div class="bg-desk-parallax" id="bgDeskParallax">
+    <div class="bg-desk-wrap" id="bgDeskWrap">
+      <img src="C2_desk.png" alt="Developer Desk Visual" class="bg-desk-img" id="bgDeskImg" loading="eager">
+    </div>
+  </div>
+  <div class="bg-desk-overlay"></div>
+</div>
+
+<!-- PAGE LOADER -->
+<div class="page-loader" id="pageLoader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-symbol">
+      <span class="symbol-bracket">&lt;</span>
+      <span class="loader-logo">L·R</span>
+      <span class="symbol-bracket">/&gt;</span>
+    </div>
+    <div class="loader-bar-wrap"><div class="loader-bar-fill" id="loaderBarFill"></div></div>
+    <div class="loader-label">Loading Portfolio</div>
+  </div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- CERTIFICATION & MEMO LIGHTBOX -->
+<div class="cert-lightbox" id="certLightbox" role="dialog" aria-modal="true" aria-label="Certificate viewer" aria-hidden="true">
+  <div class="cert-lb-backdrop" id="certBackdrop"></div>
+  <div class="cert-lb-panel" id="certPanel">
+    
+    <!-- Modal Header / Controls -->
+    <div class="cert-lb-header">
+      <div class="cert-lb-meta">
+        <span class="cert-lb-org" id="certLbOrg"></span>
+        <h3 class="cert-lb-name" id="certLbName"></h3>
+      </div>
+      <div class="cert-lb-controls">
+        <!-- Zoom Controls -->
+        <div class="cert-tool-group" id="certZoomGroup">
+          <button class="cert-tool-btn" id="certZoomOut" aria-label="Zoom out" title="Zoom out">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <span class="cert-zoom-level" id="certZoomLevel">100%</span>
+          <button class="cert-tool-btn" id="certZoomIn" aria-label="Zoom in" title="Zoom in">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <button class="cert-tool-btn" id="certZoomReset" aria-label="Fit to view" title="Reset / Fit">
+            <i class="fa-solid fa-rotate-left"></i>
+          </button>
+        </div>
+
+        <!-- Page Controls (Multi-page PDF) -->
+        <div class="cert-tool-group" id="certPageGroup" style="display: none;">
+          <button class="cert-tool-btn" id="certPrevPage" aria-label="Previous page" title="Previous page">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <span class="cert-page-info" id="certPageInfo">1 / 1</span>
+          <button class="cert-tool-btn" id="certNextPage" aria-label="Next page" title="Next page">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <!-- Action Links -->
+        <div class="cert-tool-group">
+          <a class="cert-tool-btn cert-action-link" id="certOpenNewTab" href="#" target="_blank" rel="noopener noreferrer" aria-label="Open document in new tab" title="Open in new tab">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            <span class="tool-text">Open</span>
+          </a>
+          <a class="cert-tool-btn cert-action-link" id="certDownload" href="#" download aria-label="Download document" title="Download">
+            <i class="fa-solid fa-download"></i>
+            <span class="tool-text">Download</span>
+          </a>
+        </div>
+
+        <!-- Close Button -->
+        <button class="cert-lb-close" id="certClose" aria-label="Close certificate viewer" title="Close (Esc)">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Viewer Body -->
+    <div class="cert-lb-body" id="certLbBody">
+      <!-- Loading State -->
+      <div class="cert-loader-wrap" id="certLoader" aria-hidden="true">
+        <div class="cert-spinner"></div>
+        <span class="cert-loader-text">Rendering credential document...</span>
+      </div>
+
+      <!-- Fallback / Error State -->
+      <div class="cert-error-wrap" id="certErrorState" style="display: none;">
+        <i class="fa-solid fa-file-lines cert-error-icon"></i>
+        <h4 class="cert-error-title">Preview not available in this view</h4>
+        <p class="cert-error-desc">You can directly open or download the document using the buttons below.</p>
+        <div class="cert-error-btns">
+          <a class="btn btn-primary btn-sm" id="certErrorOpenBtn" href="#" target="_blank" rel="noopener">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Document
+          </a>
+          <a class="btn btn-ghost btn-sm" id="certErrorDownloadBtn" href="#" download>
+            <i class="fa-solid fa-download"></i> Download
+          </a>
+        </div>
+      </div>
+
+      <!-- PDF Canvas Viewport -->
+      <div class="cert-viewport cert-pdf-viewport" id="certPdfViewport" style="display: none;">
+        <div class="cert-canvas-container" id="certCanvasContainer">
+          <canvas id="certPdfCanvas"></canvas>
+        </div>
+      </div>
+
+      <!-- Image Viewport -->
+      <div class="cert-viewport cert-img-viewport" id="certImgViewport" style="display: none;">
+        <img id="certLbImg" src="" alt="" draggable="false">
+      </div>
+    </div>
+
+    <!-- Footer Meta -->
+    <div class="cert-lb-footer" id="certLbFooter">
+      <p class="cert-lb-date" id="certLbDate"></p>
+      <a class="btn btn-primary btn-sm cert-footer-open-btn" id="certFooterOpenBtn" href="#" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-arrow-up-right-from-square"></i> <span id="certFooterOpenText">Open in New Tab</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- NOISE GRAIN -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- HEADER -->
+<header class="site-header" id="siteHeader">
+  <a href="#top" class="wordmark" aria-label="Laharika Relangi — Home">
+    <span class="brand-code">&lt;</span>L·R<span class="brand-code">/&gt;</span>
+  </a>
+  <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
+    <a href="#about" class="nav-link" data-section="about">About</a>
+    <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+    <a href="#internships" class="nav-link" data-section="internships">Internships</a>
+    <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+    <a href="#achievements" class="nav-link" data-section="achievements">Achievements</a>
+    <a href="#certifications" class="nav-link" data-section="certifications">Certifications</a>
+    <a href="#education" class="nav-link" data-section="education">Education</a>
+    <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    <div class="nav-indicator" id="navIndicator"></div>
+  </nav>
+  <div class="header-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to Light Mode" title="Switch to Light Mode" type="button">
+      <span class="theme-toggle-track">
+        <i class="fa-solid fa-moon toggle-icon icon-moon" aria-hidden="true"></i>
+        <i class="fa-solid fa-sun toggle-icon icon-sun" aria-hidden="true"></i>
+        <span class="theme-toggle-thumb"></span>
+      </span>
+    </button>
+    <a href="laharika_resume.pdf" class="header-resume" target="_blank" rel="noopener noreferrer">
+      <i class="fa-solid fa-file-pdf"></i><span>Resume</span>
+    </a>
+    <a href="#contact" class="header-cta magnetic">Let's Connect</a>
+  </div>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mainNav">
+    <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+  </button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-sticky">
+    <!-- Canvas background -->
+    <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+
+    <!-- Floating 3D/Tech Code Badges -->
+    <div class="floating-tech-element ft-1" aria-hidden="true"><i class="devicon-java-plain colored"></i> <span>Java</span></div>
+    <div class="floating-tech-element ft-2" aria-hidden="true"><i class="devicon-spring-original colored"></i> <span>Spring Boot</span></div>
+    <div class="floating-tech-element ft-3" aria-hidden="true"><i class="devicon-mysql-plain colored"></i> <span>MySQL</span></div>
+    <div class="floating-tech-element ft-4" aria-hidden="true"><i class="devicon-javascript-plain colored"></i> <span>JavaScript</span></div>
+    <div class="floating-tech-element ft-5" aria-hidden="true"><i class="fa-solid fa-network-wired"></i> <span>REST APIs</span></div>
+
+    <!-- Ambient orbs -->
+    <div class="orb orb-1" aria-hidden="true"></div>
+    <div class="orb orb-2" aria-hidden="true"></div>
+    <div class="orb orb-3" aria-hidden="true"></div>
+
+    <!-- Portrait -->
+    <div class="hero-portrait" id="heroPortrait" aria-hidden="true">
+      <img src="Mine_ige.jpeg" alt="Laharika Relangi" id="portraitImg">
+      <div class="portrait-vignette"></div>
+      <div class="portrait-glow"></div>
+    </div>
+
+    <!-- Grid overlay -->
+    <div class="hero-grid" aria-hidden="true"></div>
+
+    <!-- Scenes -->
+    <div class="hero-scenes" id="heroScenes">
+
+      <div class="scene" data-scene="1" data-pos="left">
+        <p class="eyebrow animate-chars"><i class="fa-solid fa-code"></i> DIGITAL PORTFOLIO</p>
+        <h1 class="scene-heading">Laharika<br>Relangi</h1>
+        <p class="scene-sub">Aspiring Full Stack Developer</p>
+        <p class="scene-body">Dedicated Computer Science Engineering student passionate about software engineering, Java &amp; Spring Boot development, and building robust, user-centric web applications.</p>
+        <div class="hero-badges">
+          <span class="hero-badge"><i class="devicon-java-plain"></i> Java</span>
+          <span class="hero-badge"><i class="devicon-spring-original"></i> Spring Boot</span>
+          <span class="hero-badge"><i class="devicon-mysql-plain"></i> MySQL</span>
+          <span class="hero-badge"><i class="devicon-nodejs-plain"></i> Node.js</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary magnetic">View My Work <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="laharika_resume.pdf" target="_blank" rel="noopener" class="btn btn-ghost magnetic"><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
+          <div class="hero-social-strip">
+            <a href="https://www.linkedin.com/in/laharika-relangi-38b575292/" target="_blank" rel="noopener noreferrer" class="hero-social-btn magnetic" aria-label="LinkedIn Profile" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/Lahari0603" target="_blank" rel="noopener noreferrer" class="hero-social-btn magnetic" aria-label="GitHub Profile" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:relangilaharika@gmail.com" class="hero-social-btn magnetic" aria-label="Email Laharika" title="Email Me">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="scene" data-scene="2" data-pos="right">
+        <p class="eyebrow"><i class="fa-solid fa-graduation-cap"></i> THE SCHOLAR &amp; BUILDER</p>
+        <h2 class="scene-heading">Engineering with<br>precision and<br>passion.</h2>
+        <p class="scene-body">Third-year B.Tech CSE student at Bonam Venkata Chalamayya Institute of Technology and Science (BVCITS) holding an <strong>8.5 CGPA</strong>, blending strong algorithmic fundamentals with modern full-stack development.</p>
+      </div>
+
+      <div class="scene" data-scene="3" data-pos="left">
+        <p class="eyebrow"><i class="fa-solid fa-layer-group"></i> THE CORE STACK</p>
+        <h2 class="scene-heading">Architected with<br>modern tech.</h2>
+        <p class="scene-body">Java, Spring Boot, MySQL, JavaScript, HTML5, CSS3, Node.js, and RESTful APIs — backed by tooling like Eclipse, VS Code, and Git for reliable software delivery.</p>
+      </div>
+
+      <div class="scene" data-scene="4" data-pos="right">
+        <p class="eyebrow"><i class="fa-solid fa-trophy"></i> HACKATHONS &amp; CREATIONS</p>
+        <h2 class="scene-heading">Solving real<br>academic &amp; dev<br>challenges.</h2>
+        <p class="scene-body">From architecting a <strong>Student Readiness &amp; Placement Tracker</strong> hackathon platform to winning <strong>1st Prize</strong> in Code Clash Challenge 2K24 with an interactive <strong>Sorting Visualizer</strong>.</p>
+      </div>
+
+      <div class="scene" data-scene="5" data-pos="left">
+        <p class="eyebrow"><i class="fa-solid fa-chart-line"></i> CONTINUOUS LEARNING</p>
+        <h2 class="scene-heading">Learning.<br>Applying.<br>Excelling.</h2>
+        <p class="scene-body">Completed specialized virtual internships with Talent Shine India (Java Development), ExcelR (Cyber Security), and EduSkills (AI/ML) — validated by 8+ industry certifications.</p>
+      </div>
+
+      <div class="scene" data-scene="6" data-pos="right">
+        <p class="eyebrow"><i class="fa-solid fa-handshake"></i> READY FOR IMPACT</p>
+        <h2 class="scene-heading">Let's build<br>something<br>impactful.</h2>
+        <p class="scene-body">Seeking full stack and software development roles where I can contribute programming knowledge, collaborate with innovative teams, and build scalable systems.</p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary magnetic">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#contact" class="btn btn-ghost magnetic">Get in Touch</a>
+        </div>
+      </div>
+
+    </div><!-- /hero-scenes -->
+
+    <!-- Scroll cue -->
+    <div class="scroll-cue" id="scrollCue" aria-hidden="true">
+      <span>Scroll to explore</span>
+      <div class="scroll-line"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ========== ABOUT ========== -->
+<section class="section about" id="about">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal"><i class="fa-solid fa-user-astronaut"></i> 01 — ABOUT ME</p>
+    <h2 class="section-heading reveal">Driven by curiosity.<br>Shaped by code.</h2>
+
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>I'm <strong>Laharika Relangi</strong>, a Computer Science and Engineering student based in <span class="highlight">Amalapuram, Andhra Pradesh, India</span>, currently pursuing my B.Tech at <strong>Bonam Venkata Chalamayya Institute of Technology and Science</strong> <span class="highlight">(2023–2027)</span>.</p>
+        
+        <p>As a dedicated and quick-learning aspiring developer, my core enthusiasm lies in <strong>Java &amp; Spring Boot backend architectures</strong>, relational database design with <strong>MySQL</strong>, and modern full-stack web applications. I enjoy understanding how systems work under the hood and transforming ideas into structured, high-performing code.</p>
+        
+        <p>Whether building collaborative hackathon solutions, exploring data structures and algorithms, or completing virtual internships across Java, Cyber Security, and AI/ML, I approach every challenge with analytical thinking, active collaboration, and an eagerness to continuously learn modern technologies.</p>
+        
+        <div class="about-actions">
+          <a href="laharika_resume.pdf" class="btn btn-primary magnetic" target="_blank" rel="noopener">
+            <i class="fa-solid fa-file-arrow-down"></i> Download Resume
+          </a>
+          <a href="https://github.com/Lahari0603" class="btn btn-ghost magnetic" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i> GitHub Profile
+          </a>
+          <a href="https://www.linkedin.com/in/laharika-relangi-38b575292/" class="btn btn-ghost magnetic" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="about-stats reveal">
+        <div class="stat-card glass-card">
+          <i class="fa-solid fa-graduation-cap stat-icon"></i>
+          <span class="stat-num" data-count="8.5" data-decimal="1">8.5</span>
+          <span class="stat-label">B.Tech CGPA (5th Sem)</span>
+        </div>
+        <div class="stat-card glass-card">
+          <i class="fa-solid fa-calendar-check stat-icon"></i>
+          <span class="stat-num" data-count="2027">2027</span>
+          <span class="stat-label">Expected Graduation</span>
+        </div>
+        <div class="stat-card glass-card">
+          <i class="fa-solid fa-certificate stat-icon"></i>
+          <span class="stat-num" data-count="8">8</span>
+          <span class="stat-label">Certifications Earned</span>
+        </div>
+        <div class="stat-card glass-card highlight-card">
+          <i class="fa-solid fa-trophy stat-icon gold-accent"></i>
+          <span class="stat-num" data-count="1">1</span><span class="stat-suffix">st</span>
+          <span class="stat-label">Prize · Code Clash 2K24</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SKILLS ========== -->
+<section class="section skills" id="skills">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal"><i class="fa-solid fa-layer-group"></i> 02 — TECHNICAL TOOLKIT</p>
+    <h2 class="section-heading reveal">Skills forged through<br>practice and projects.</h2>
+
+    <div class="skill-groups">
+
+      <!-- Programming Languages -->
+      <div class="skill-group-card glass-card reveal" tabindex="0">
+        <div class="skill-group-header">
+          <div class="skill-group-icon-wrap"><i class="fa-solid fa-code"></i></div>
+          <h3>Programming Languages</h3>
+        </div>
+        <div class="skill-chips">
+          <div class="skill-chip" data-label="Java">
+            <div class="chip-icon"><i class="devicon-java-plain colored"></i></div>
+            <span>Java <small class="tag primary-tag">Core &amp; OOP</small></span>
+          </div>
+          <div class="skill-chip" data-label="JavaScript">
+            <div class="chip-icon"><i class="devicon-javascript-plain colored"></i></div>
+            <span>JavaScript <small class="tag">ES6+</small></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frameworks & Backend -->
+      <div class="skill-group-card glass-card reveal" tabindex="0">
+        <div class="skill-group-header">
+          <div class="skill-group-icon-wrap"><i class="fa-solid fa-server"></i></div>
+          <h3>Frameworks &amp; Backend</h3>
+        </div>
+        <div class="skill-chips">
+          <div class="skill-chip" data-label="Spring Boot">
+            <div class="chip-icon"><i class="devicon-spring-original colored"></i></div>
+            <span>Spring Boot <small class="tag primary-tag">Framework</small></span>
+          </div>
+          <div class="skill-chip" data-label="Node.js">
+            <div class="chip-icon"><i class="devicon-nodejs-plain colored"></i></div>
+            <span>Node.js <small class="tag">Runtime</small></span>
+          </div>
+          <div class="skill-chip" data-label="REST APIs">
+            <div class="chip-icon"><i class="fa-solid fa-network-wired colored" style="color:#00cec9"></i></div>
+            <span>RESTful APIs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web Technologies -->
+      <div class="skill-group-card glass-card reveal" tabindex="0">
+        <div class="skill-group-header">
+          <div class="skill-group-icon-wrap"><i class="fa-solid fa-palette"></i></div>
+          <h3>Web Technologies</h3>
+        </div>
+        <div class="skill-chips">
+          <div class="skill-chip" data-label="HTML5">
+            <div class="chip-icon"><i class="devicon-html5-plain colored"></i></div>
+            <span>HTML5</span>
+          </div>
+          <div class="skill-chip" data-label="CSS3">
+            <div class="chip-icon"><i class="devicon-css3-plain colored"></i></div>
+            <span>CSS3</span>
+          </div>
+          <div class="skill-chip" data-label="Responsive UI">
+            <div class="chip-icon"><i class="fa-solid fa-mobile-screen-button colored" style="color:#a29bfe"></i></div>
+            <span>Responsive Web Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Databases -->
+      <div class="skill-group-card glass-card reveal" tabindex="0">
+        <div class="skill-group-header">
+          <div class="skill-group-icon-wrap"><i class="fa-solid fa-database"></i></div>
+          <h3>Databases</h3>
+        </div>
+        <div class="skill-chips">
+          <div class="skill-chip" data-label="MySQL">
+            <div class="chip-icon"><i class="devicon-mysql-plain colored"></i></div>
+            <span>MySQL <small class="tag primary-tag">RDBMS</small></span>
+          </div>
+          <div class="skill-chip" data-label="SQL Fundamentals">
+            <div class="chip-icon"><i class="devicon-azuresqldatabase-plain colored"></i></div>
+            <span>SQL Queries &amp; Schema</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Development Tools -->
+      <div class="skill-group-card glass-card reveal" tabindex="0">
+        <div class="skill-group-header">
+          <div class="skill-group-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3>Development Tools</h3>
+        </div>
+        <div class="skill-chips">
+          <div class="skill-chip" data-label="Eclipse">
+            <div class="chip-icon"><i class="devicon-eclipse-plain colored"></i></div>
+            <span>Eclipse IDE</span>
+          </div>
+          <div class="skill-chip" data-label="VS Code">
+            <div class="chip-icon"><i class="devicon-vscode-plain colored"></i></div>
+            <span>VS Code</span>
+          </div>
+          <div class="skill-chip" data-label="GitHub">
+            <div class="chip-icon"><i class="devicon-github-original colored"></i></div>
+            <span>GitHub &amp; Git</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Professional & Soft Skills -->
+      <div class="skill-group-card glass-card reveal" tabindex="0">
+        <div class="skill-group-header">
+          <div class="skill-group-icon-wrap"><i class="fa-solid fa-brain"></i></div>
+          <h3>Soft Skills &amp; Strengths</h3>
+        </div>
+        <div class="soft-skills">
+          <div class="soft-skill"><i class="fa-solid fa-comments"></i> Clear Communication</div>
+          <div class="soft-skill"><i class="fa-solid fa-users"></i> Team Collaboration</div>
+          <div class="soft-skill"><i class="fa-solid fa-magnifying-glass-chart"></i> Analytical Thinking</div>
+          <div class="soft-skill"><i class="fa-solid fa-gears"></i> Logical Thinking</div>
+          <div class="soft-skill"><i class="fa-solid fa-bolt"></i> Quick Learner</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== INTERNSHIPS ========== -->
+<section class="section internships" id="internships">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal"><i class="fa-solid fa-briefcase"></i> 03 — INTERNSHIPS</p>
+    <h2 class="section-heading reveal">Practical experience<br>&amp; virtual apprenticeships.</h2>
+
+    <div class="internships-list">
+
+      <!-- Internship 1: Java Development -->
+      <div class="internship-card glass-card reveal" tabindex="0">
+        <div class="intern-card-grid">
+          <div class="intern-img-col">
+            <div class="intern-img-cover">
+              <img src="Java_Development_VirtualInternship_pic.jpg" alt="Java Development Virtual Internship - Talent Shine India" class="intern-cover-img" loading="lazy">
+              <div class="intern-img-tag"><i class="devicon-java-plain colored"></i> Java Developer</div>
+            </div>
+          </div>
+          <div class="intern-content-col">
+            <div class="intern-header-meta">
+              <div class="intern-date-badge"><i class="fa-regular fa-calendar-check"></i> Virtual Internship</div>
+              <span class="intern-type-pill primary-pill"><i class="fa-solid fa-code"></i> Software Development</span>
+            </div>
+            <h3>Java Development – Virtual Internship</h3>
+            <p class="intern-org"><i class="fa-solid fa-building"></i> Talent Shine India</p>
+            <p class="intern-desc">Completed hands-on training focusing on Core Java, Object-Oriented Programming (OOP) paradigms, and SQL database integration. Built and debugged Java console and modular applications, strengthening analytical problem-solving and software development capabilities.</p>
+            <ul class="intern-highlights">
+              <li><i class="fa-solid fa-circle-check"></i> Mastered Core Java and Object-Oriented Programming (OOP) design</li>
+              <li><i class="fa-solid fa-circle-check"></i> Learned SQL database fundamentals and query optimization</li>
+              <li><i class="fa-solid fa-circle-check"></i> Developed practical Java applications and enhanced problem-solving skills</li>
+            </ul>
+            <div class="intern-tags">
+              <span><i class="devicon-java-plain colored"></i> Java</span>
+              <span><i class="fa-solid fa-cubes"></i> OOP</span>
+              <span><i class="fa-solid fa-database"></i> SQL</span>
+              <span><i class="fa-solid fa-bug"></i> Debugging</span>
+            </div>
+            <div class="intern-actions">
+              <button class="btn btn-primary btn-sm magnetic" onclick="openCertDocument('Java_programming_certificate.pdf','Talent Shine India','Java Programming Certificate','Talent Shine Virtual Internship')" aria-label="View Java Programming Certificate">
+                <i class="fa-solid fa-certificate"></i> View Certificate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internship 2: Cyber Security -->
+      <div class="internship-card glass-card reveal" tabindex="0">
+        <div class="intern-card-grid">
+          <div class="intern-img-col">
+            <div class="intern-img-cover">
+              <img src="CyberSequirity_virtual_intership_pic.jpg" alt="Cyber Security Virtual Internship - ExcelR" class="intern-cover-img" loading="lazy">
+              <div class="intern-img-tag"><i class="fa-solid fa-shield-halved" style="color:#00cec9"></i> Cyber Security</div>
+            </div>
+          </div>
+          <div class="intern-content-col">
+            <div class="intern-header-meta">
+              <div class="intern-date-badge"><i class="fa-regular fa-calendar-check"></i> Virtual Internship</div>
+              <span class="intern-type-pill info-pill"><i class="fa-solid fa-lock"></i> Security</span>
+            </div>
+            <h3>Cyber Security – Virtual Internship</h3>
+            <p class="intern-org"><i class="fa-solid fa-building"></i> ExcelR</p>
+            <p class="intern-desc">Gained foundational knowledge in cybersecurity principles, system vulnerabilities, safe computing practices, network defense concepts, and data protection standards required in modern web infrastructure.</p>
+            <ul class="intern-highlights">
+              <li><i class="fa-solid fa-circle-check"></i> Learned cyber security fundamentals and threat landscape concepts</li>
+              <li><i class="fa-solid fa-circle-check"></i> Studied secure computing practices and software vulnerability avoidance</li>
+            </ul>
+            <div class="intern-tags">
+              <span><i class="fa-solid fa-shield-halved"></i> Cyber Security</span>
+              <span><i class="fa-solid fa-network-wired"></i> Network Defense</span>
+              <span><i class="fa-solid fa-user-shield"></i> Safe Computing</span>
+            </div>
+            <div class="intern-actions">
+              <button class="btn btn-primary btn-sm magnetic" onclick="openCertDocument('CyberSequirity_Certificate.pdf','ExcelR','Cyber Security Internship Certificate','ExcelR Virtual Internship')" aria-label="View Cyber Security Certificate">
+                <i class="fa-solid fa-certificate"></i> View Certificate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Internship 3: AI & ML -->
+      <div class="internship-card glass-card reveal" tabindex="0">
+        <div class="intern-card-grid">
+          <div class="intern-img-col">
+            <div class="intern-img-cover">
+              <img src="AIML_Virual_internship_pic.jpg" alt="AI & ML Virtual Internship - EduSkills" class="intern-cover-img" loading="lazy">
+              <div class="intern-img-tag"><i class="fa-solid fa-brain" style="color:#fdcb6e"></i> AI &amp; ML</div>
+            </div>
+          </div>
+          <div class="intern-content-col">
+            <div class="intern-header-meta">
+              <div class="intern-date-badge"><i class="fa-regular fa-calendar-check"></i> Virtual Internship</div>
+              <span class="intern-type-pill warm-pill"><i class="fa-solid fa-microchip"></i> Artificial Intelligence</span>
+            </div>
+            <h3>AI &amp; ML – Virtual Internship</h3>
+            <p class="intern-org"><i class="fa-solid fa-building"></i> EduSkills</p>
+            <p class="intern-desc">Explored the fundamentals of Artificial Intelligence, Machine Learning algorithms, and intelligent systems. Gained insights into supervised and unsupervised learning models and applied generative technologies.</p>
+            <ul class="intern-highlights">
+              <li><i class="fa-solid fa-circle-check"></i> Studied Artificial Intelligence principles and problem formulation</li>
+              <li><i class="fa-solid fa-circle-check"></i> Learned core Machine Learning fundamentals and model evaluation</li>
+            </ul>
+            <div class="intern-tags">
+              <span><i class="fa-solid fa-robot"></i> Artificial Intelligence</span>
+              <span><i class="fa-solid fa-chart-line"></i> Machine Learning</span>
+              <span><i class="fa-solid fa-wand-magic-sparkles"></i> Gen AI</span>
+            </div>
+            <div class="intern-actions">
+              <button class="btn btn-primary btn-sm magnetic" onclick="openCertDocument('Applied_Generative_AI_Certificate.pdf','EduSkills / Talent Shine','Applied Generative AI Certificate','EduSkills AI & ML Program')" aria-label="View AI & ML Certificate">
+                <i class="fa-solid fa-certificate"></i> View Certificate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section class="section projects" id="projects">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal"><i class="fa-solid fa-laptop-code"></i> 04 — FEATURED PROJECTS</p>
+    <h2 class="section-heading reveal">Practical engineering<br>&amp; hackathon solutions.</h2>
+
+    <div class="project-grid">
+
+      <!-- Project 1: Student Readiness and Placement Tracker -->
+      <article class="project-card glass-card reveal" tabindex="0">
+        <div class="project-img-wrap" data-tone="indigo">
+          <div class="project-mockup-header">
+            <span class="mockup-dot red"></span>
+            <span class="mockup-dot yellow"></span>
+            <span class="mockup-dot green"></span>
+            <span class="mockup-title">placement-tracker-dashboard.app</span>
+          </div>
+          <div class="project-visual-preview">
+            <div class="preview-metrics">
+              <div class="metric-pill"><i class="fa-solid fa-chart-pie"></i> Skill Analytics</div>
+              <div class="metric-pill"><i class="fa-solid fa-user-check"></i> Readiness Score</div>
+              <div class="metric-pill"><i class="fa-solid fa-briefcase"></i> Eligibility Engine</div>
+            </div>
+            <div class="preview-code-box">
+              <code><span class="kw">@RestController</span><br><span class="kw">public class</span> <span class="fn">PlacementTrackerController</span> {<br>&nbsp;&nbsp;<span class="kw">@GetMapping</span>(<span class="str">"/api/readiness/{studentId}"</span>)<br>&nbsp;&nbsp;<span class="kw">public</span> ResponseEntity&lt;ReadinessReport&gt; <span class="fn">getReport</span>() { ... }<br>}</code>
+            </div>
+          </div>
+          <div class="project-img-overlay"></div>
+          <span class="project-num">01</span>
+          <span class="project-type-badge hackathon-badge"><i class="fa-solid fa-trophy"></i> Hackathon Project</span>
+        </div>
+        <div class="project-body">
+          <div class="project-meta-row">
+            <span class="project-timeline-tag"><i class="fa-regular fa-calendar"></i> January 2026 – April 2026</span>
+          </div>
+          <h3>Student Readiness &amp; Placement Tracker</h3>
+          <p>A comprehensive web-based placement management system designed to systematically track students' technical skills, aptitude scores, certifications, projects, and overall interview readiness for campus placements.</p>
+          
+          <div class="project-features-list">
+            <div class="p-feature"><i class="fa-solid fa-check"></i> Student technical skill &amp; aptitude performance tracking</div>
+            <div class="p-feature"><i class="fa-solid fa-check"></i> Certification &amp; project portfolio monitoring</div>
+            <div class="p-feature"><i class="fa-solid fa-check"></i> Automated placement eligibility &amp; interview readiness scoring</div>
+            <div class="p-feature"><i class="fa-solid fa-check"></i> Student performance dashboards &amp; REST API backend</div>
+          </div>
+
+          <div class="project-tech">
+            <span><i class="devicon-java-plain colored"></i> Java</span>
+            <span><i class="devicon-spring-original colored"></i> Spring Boot</span>
+            <span><i class="devicon-mysql-plain colored"></i> MySQL</span>
+            <span><i class="fa-solid fa-network-wired"></i> REST APIs</span>
+            <span><i class="devicon-html5-plain colored"></i> HTML5</span>
+            <span><i class="devicon-css3-plain colored"></i> CSS3</span>
+            <span><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+          </div>
+
+          <div class="project-team-note">
+            <i class="fa-solid fa-people-group"></i> Collaborated effectively with team members during the hackathon to architect and deliver the end-to-end placement tracking solution.
+          </div>
+
+          <div class="project-links">
+            <button class="btn btn-ghost btn-sm magnetic" onclick="openCertDocument('Internship_Common_Apptitude_Certificate.pdf','Placement Readiness','Skill Assessment & Common Aptitude','Academic & Placement Preparation')" title="View Placement & Aptitude Assessment">
+              <i class="fa-solid fa-file-lines"></i> View Assessment Credential
+            </button>
+            <a href="https://github.com/Lahari0603" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm magnetic">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Sorting Visualizer (Code Clash 1st Prize Project) -->
+      <article class="project-card glass-card reveal" tabindex="0">
+        <div class="project-img-wrap" data-tone="violet">
+          <div class="project-mockup-header">
+            <span class="mockup-dot red"></span>
+            <span class="mockup-dot yellow"></span>
+            <span class="mockup-dot green"></span>
+            <span class="mockup-title">sorting-visualizer.algorithm.io</span>
+          </div>
+          <div class="project-visual-preview">
+            <div class="sorting-bars-mockup" id="sortingBarsMockup">
+              <div class="sort-bar" style="height: 35%;"></div>
+              <div class="sort-bar" style="height: 70%;"></div>
+              <div class="sort-bar active-compare" style="height: 90%;"></div>
+              <div class="sort-bar active-swap" style="height: 50%;"></div>
+              <div class="sort-bar" style="height: 80%;"></div>
+              <div class="sort-bar" style="height: 40%;"></div>
+              <div class="sort-bar sorted-bar" style="height: 60%;"></div>
+              <div class="sort-bar sorted-bar" style="height: 95%;"></div>
+            </div>
+            <div class="algo-tags-preview">
+              <span>Bubble Sort</span>
+              <span>Merge Sort</span>
+              <span>Quick Sort</span>
+              <span>Insertion Sort</span>
+            </div>
+          </div>
+          <div class="project-img-overlay"></div>
+          <span class="project-num">02</span>
+          <span class="project-type-badge gold-badge"><i class="fa-solid fa-award"></i> 1st Prize Winner</span>
+        </div>
+        <div class="project-body">
+          <div class="project-meta-row">
+            <span class="project-timeline-tag"><i class="fa-solid fa-trophy text-gold"></i> Code Clash Challenge 2K24</span>
+          </div>
+          <h3>Interactive Sorting Visualizer</h3>
+          <p>An interactive, educational visualization web tool developed and presented for the <strong>Code Clash Challenge 2K24</strong> at BVCITS. Demonstrates step-by-step sorting algorithms with color-coded comparison arrays and adjustable speeds.</p>
+          
+          <div class="project-features-list">
+            <div class="p-feature"><i class="fa-solid fa-check"></i> Real-time visual representation of comparison &amp; swap operations</div>
+            <div class="p-feature"><i class="fa-solid fa-check"></i> Implementation of Bubble Sort, Merge Sort, Quick Sort &amp; Insertion Sort</div>
+            <div class="p-feature"><i class="fa-solid fa-check"></i> Interactive speed controls and dynamic array size generators</div>
+            <div class="p-feature"><i class="fa-solid fa-check"></i> Awarded <strong>First Prize</strong> by Department of CSE faculty judges</div>
+          </div>
+
+          <div class="project-tech">
+            <span><i class="devicon-java-plain colored"></i> Java / Logic</span>
+            <span><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+            <span><i class="devicon-html5-plain colored"></i> HTML5 Canvas</span>
+            <span><i class="devicon-css3-plain colored"></i> CSS3</span>
+            <span><i class="fa-solid fa-gears"></i> DSA</span>
+          </div>
+
+          <div class="project-links">
+            <button class="btn btn-primary btn-sm magnetic" onclick="openCertDocument('Achivement_certficate.jpeg','BVCITS CSE Department','Code Clash Challenge 2K24 — First Prize Certificate','Secured 1st Prize presenting the Sorting Visualizer')">
+              <i class="fa-solid fa-trophy"></i> View 1st Prize Certificate
+            </button>
+            <a href="https://github.com/Lahari0603" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-sm magnetic">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== ACHIEVEMENTS ========== -->
+<section class="section achievements" id="achievements">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal"><i class="fa-solid fa-award"></i> 05 — ACHIEVEMENTS &amp; HONORS</p>
+    <h2 class="section-heading reveal">Recognized for technical<br>and algorithmic skill.</h2>
+
+    <div class="achievements-showcase reveal">
+      <div class="achievement-card glass-card">
+        <div class="achievement-visual">
+          <div class="trophy-wrap">
+            <i class="fa-solid fa-trophy trophy-glow-icon"></i>
+            <div class="trophy-ring"></div>
+          </div>
+          <div class="achievement-badge-pill">
+            <i class="fa-solid fa-medal"></i> FIRST PRIZE WINNER
+          </div>
+        </div>
+        <div class="achievement-details">
+          <span class="achievement-org"><i class="fa-solid fa-building-columns"></i> Bonam Venkata Chalamayya Institute of Technology &amp; Science</span>
+          <h3>First Prize – Code Clash Challenge 2K24</h3>
+          <p class="achievement-desc">
+            Secured <strong>First Prize</strong> in the prestigious <em>Code Clash Challenge – 2K24</em> organized by the Department of Computer Science and Engineering at BVCITS. Developed and presented the <strong>Sorting Visualizer</strong> project, demonstrating strong programming acumen, algorithmic clarity, and live presentation excellence.
+          </p>
+          <div class="achievement-footer-meta">
+            <span class="ach-tag"><i class="fa-solid fa-tag"></i> CSE Department Contest</span>
+            <span class="ach-tag"><i class="fa-solid fa-laptop-code"></i> Project: Sorting Visualizer</span>
+            <button class="btn btn-primary btn-sm magnetic ach-view-btn" onclick="openCertDocument('Achivement_certficate.jpeg','Department of CSE · BVCITS','Code Clash Challenge 2K24 — 1st Prize Certificate','Winner Certificate · Sri Durga Laharika Relangi')">
+              <i class="fa-solid fa-expand"></i> View Certificate Memo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CERTIFICATIONS ========== -->
+<section class="section certifications" id="certifications">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal"><i class="fa-solid fa-certificate"></i> 06 — CERTIFICATIONS</p>
+    <h2 class="section-heading reveal">Verified credentials<br>&amp; continuous learning.</h2>
+    <p class="section-subtext reveal">Click any card to open the interactive canvas document viewer with zoom and full page inspect.</p>
+
+    <div class="cert-gallery">
+
+      <!-- Cert 1: Data Analytics (Talent Shine) -->
+      <div class="cert-card glass-card reveal" tabindex="0"
+        data-file="4286919-DATA_ANALYTICS-Certificate.pdf"
+        data-name="Data Analyst Certification"
+        data-org="Talent Shine"
+        data-date="Talent Shine Professional Certification">
+        <div class="cert-card-visual">
+          <div class="cert-card-icon-bg accent-blue">
+            <i class="fa-solid fa-chart-simple cert-big-icon" style="color:#0984e3"></i>
+          </div>
+          <div class="cert-hover-overlay">
+            <span><i class="fa-solid fa-expand"></i> Inspect PDF</span>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <span class="cert-org-tag"><i class="fa-solid fa-building"></i> Talent Shine</span>
+          <h4>Data Analyst Certification</h4>
+          <p class="cert-desc">Data analysis methodologies, data exploration, metrics interpretation, and structured querying.</p>
+        </div>
+      </div>
+
+      <!-- Cert 2: Social Network Analysis (NPTEL SWAYAM) -->
+      <div class="cert-card glass-card reveal" tabindex="0"
+        data-file="Social Network Analysis_Nptel.pdf"
+        data-name="Social Network Analysis"
+        data-org="NPTEL · SWAYAM (Govt. of India)"
+        data-date="NPTEL SWAYAM Online Certification">
+        <div class="cert-card-visual">
+          <div class="cert-card-icon-bg accent-orange">
+            <i class="fa-solid fa-circle-nodes cert-big-icon" style="color:#e17055"></i>
+          </div>
+          <div class="cert-hover-overlay">
+            <span><i class="fa-solid fa-expand"></i> Inspect PDF</span>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <span class="cert-org-tag"><i class="fa-solid fa-building-columns"></i> NPTEL · SWAYAM</span>
+          <h4>Social Network Analysis</h4>
+          <p class="cert-desc">Graph theory, centrality metrics, community detection, network models, and information diffusion.</p>
+        </div>
+      </div>
+
+      <!-- Cert 3: SQL Basics (HackerRank) -->
+      <div class="cert-card glass-card reveal" tabindex="0"
+        data-file="Sql_Certificate.jpeg"
+        data-name="SQL (Basic) Skill Certificate"
+        data-org="HackerRank"
+        data-date="HackerRank Verified Skill">
+        <div class="cert-card-visual">
+          <div class="cert-card-icon-bg accent-green">
+            <i class="devicon-azuresqldatabase-plain cert-big-icon" style="color:#00b894"></i>
+          </div>
+          <div class="cert-hover-overlay">
+            <span><i class="fa-solid fa-expand"></i> View Certificate</span>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <span class="cert-org-tag"><i class="fa-solid fa-code"></i> HackerRank</span>
+          <h4>SQL (Basic) Certificate</h4>
+          <p class="cert-desc">Relational queries, joins, filtering, aggregations, subqueries, and database manipulation.</p>
+        </div>
+      </div>
+
+      <!-- Cert 4: Java Programming / Full Stack (Talent Shine) -->
+      <div class="cert-card glass-card reveal" tabindex="0"
+        data-file="Java_programming_certificate.pdf"
+        data-name="Java Programming &amp; Full Stack"
+        data-org="Talent Shine"
+        data-date="Talent Shine Java Track">
+        <div class="cert-card-visual">
+          <div class="cert-card-icon-bg accent-purple">
+            <i class="devicon-java-plain cert-big-icon" style="color:#6c5ce7"></i>
+          </div>
+          <div class="cert-hover-overlay">
+            <span><i class="fa-solid fa-expand"></i> Inspect PDF</span>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <span class="cert-org-tag"><i class="fa-solid fa-building"></i> Talent Shine</span>
+          <h4>Java Programming Certificate</h4>
+          <p class="cert-desc">Core Java, Object-Oriented paradigms, exception handling, data collections, and application logic.</p>
+        </div>
+      </div>
+
+      <!-- Cert 5: Applied Generative AI -->
+      <div class="cert-card glass-card reveal" tabindex="0"
+        data-file="Applied_Generative_AI_Certificate.pdf"
+        data-name="Applied Generative AI"
+        data-org="Talent Shine / Tech Track"
+        data-date="Emerging Technologies">
+        <div class="cert-card-visual">
+          <div class="cert-card-icon-bg accent-cyan">
+            <i class="fa-solid fa-wand-magic-sparkles cert-big-icon" style="color:#00cec9"></i>
+          </div>
+          <div class="cert-hover-overlay">
+            <span><i class="fa-solid fa-expand"></i> Inspect PDF</span>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <span class="cert-org-tag"><i class="fa-solid fa-microchip"></i> Emerging Tech</span>
+          <h4>Applied Generative AI</h4>
+          <p class="cert-desc">Generative AI foundations, prompt architecture, transformer applications, and practical AI tooling.</p>
+        </div>
+      </div>
+
+      <!-- Cert 6: Cyber Security (ExcelR) -->
+      <div class="cert-card glass-card reveal" tabindex="0"
+        data-file="CyberSequirity_Certificate.pdf"
+        data-name="Cyber Security Virtual Internship"
+        data-org="ExcelR"
+        data-date="ExcelR Certified">
+        <div class="cert-card-visual">
+          <div class="cert-card-icon-bg accent-red">
+            <i class="fa-solid fa-shield-halved cert-big-icon" style="color:#e84393"></i>
+          </div>
+          <div class="cert-hover-overlay">
+            <span><i class="fa-solid fa-expand"></i> Inspect PDF</span>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <span class="cert-org-tag"><i class="fa-solid fa-shield-cat"></i> ExcelR</span>
+          <h4>Cyber Security Certificate</h4>
+          <p class="cert-desc">Security protocols, ethical boundaries, vulnerability identification, and safe architecture principles.</p>
+        </div>
+      </div>
+
+      <!-- Cert 7: JavaScript Certificate -->
+      <div class="cert-card glass-card reveal" tabindex="0"
+        data-file="Java_Script_Certificate.pdf"
+        data-name="JavaScript Essentials"
+        data-org="Talent Shine"
+        data-date="Web Development Track">
+        <div class="cert-card-visual">
+          <div class="cert-card-icon-bg accent-yellow">
+            <i class="devicon-javascript-plain cert-big-icon" style="color:#f1c40f"></i>
+          </div>
+          <div class="cert-hover-overlay">
+            <span><i class="fa-solid fa-expand"></i> Inspect PDF</span>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <span class="cert-org-tag"><i class="fa-brands fa-js"></i> Talent Shine</span>
+          <h4>JavaScript Essentials</h4>
+          <p class="cert-desc">DOM manipulation, event handling, asynchronous JS, ES6 syntax, and web logic integration.</p>
+        </div>
+      </div>
+
+      <!-- Cert 8: Generative Models -->
+      <div class="cert-card glass-card reveal" tabindex="0"
+        data-file="Generative_Models.pdf"
+        data-name="Generative Models"
+        data-org="AI Certification Track"
+        data-date="Advanced AI Concepts">
+        <div class="cert-card-visual">
+          <div class="cert-card-icon-bg accent-dark">
+            <i class="fa-solid fa-network-wired cert-big-icon" style="color:#a29bfe"></i>
+          </div>
+          <div class="cert-hover-overlay">
+            <span><i class="fa-solid fa-expand"></i> Inspect PDF</span>
+          </div>
+        </div>
+        <div class="cert-card-body">
+          <span class="cert-org-tag"><i class="fa-solid fa-robot"></i> AI Track</span>
+          <h4>Generative Models</h4>
+          <p class="cert-desc">Concepts in generative modeling, deep learning architectures, and modern AI synthesis pipelines.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== EDUCATION ========== -->
+<section class="section education" id="education">
+  <div class="section-inner">
+    <p class="section-eyebrow reveal"><i class="fa-solid fa-graduation-cap"></i> 07 — EDUCATION</p>
+    <h2 class="section-heading reveal">Academic foundation.</h2>
+
+    <div class="edu-list">
+
+      <!-- B.Tech -->
+      <div class="edu-card glass-card reveal" tabindex="0">
+        <div class="edu-left">
+          <div class="edu-icon-wrap"><i class="fa-solid fa-building-columns"></i></div>
+          <span class="edu-year">2023 – 2027</span>
+        </div>
+        <div class="edu-right">
+          <div class="edu-status-badge"><i class="fa-solid fa-spinner fa-spin-pulse"></i> 5th Semester · Pursuing</div>
+          <h3>B.Tech — Computer Science &amp; Engineering</h3>
+          <p class="edu-inst">Bonam Venkata Chalamayya Institute of Technology and Science (BVCITS)</p>
+          <div class="edu-score"><i class="fa-solid fa-star"></i> CGPA: <strong>8.5</strong></div>
+          <p class="edu-details">Core coursework: Object Oriented Programming through Java, Database Management Systems, Data Structures &amp; Algorithms, Operating Systems, Web Technologies, and Software Engineering.</p>
+        </div>
+      </div>
+
+      <!-- Intermediate -->
+      <div class="edu-card glass-card reveal" tabindex="0">
+        <div class="edu-left">
+          <div class="edu-icon-wrap"><i class="fa-solid fa-book-open"></i></div>
+          <span class="edu-year">2021 – 2023</span>
+        </div>
+        <div class="edu-right">
+          <div class="edu-status-badge completed-badge"><i class="fa-solid fa-check"></i> Completed</div>
+          <h3>Intermediate — MPC (Mathematics, Physics, Chemistry)</h3>
+          <p class="edu-inst">YVS Junior College, Mukteswaram</p>
+          <div class="edu-score"><i class="fa-solid fa-star"></i> Percentage: <strong>90%</strong></div>
+          <p class="edu-details">Rigorous background in Higher Mathematics, Physical Sciences, and Analytical Problem Solving.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="section contact" id="contact">
+  <div class="contact-bg-glow" aria-hidden="true"></div>
+  <div class="section-inner contact-inner">
+    <p class="section-eyebrow reveal"><i class="fa-solid fa-envelope"></i> 08 — CONTACT</p>
+    <h2 class="section-heading big reveal">Let's build<br>what's next.</h2>
+    <p class="contact-sub reveal">I am actively seeking software engineering internships and full-stack developer opportunities. Let's discuss how I can add value to your team.</p>
+
+    <div class="contact-layout">
+      <!-- Contact Cards -->
+      <div class="contact-cards reveal">
+        <a href="mailto:relangilaharika@gmail.com" class="contact-card glass-card magnetic">
+          <div class="cc-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="cc-text">
+            <span class="cc-label">Direct Email</span>
+            <span class="cc-value">relangilaharika@gmail.com</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square cc-arrow"></i>
+        </a>
+
+        <div class="contact-card glass-card">
+          <div class="cc-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="cc-text">
+            <span class="cc-label">Location</span>
+            <span class="cc-value">Amalapuram, Andhra Pradesh, India</span>
+          </div>
+        </div>
+
+        <a href="https://www.linkedin.com/in/laharika-relangi-38b575292/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card magnetic">
+          <div class="cc-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+          <div class="cc-text">
+            <span class="cc-label">LinkedIn</span>
+            <span class="cc-value">laharika-relangi-38b575292</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square cc-arrow"></i>
+        </a>
+
+        <a href="https://github.com/Lahari0603" target="_blank" rel="noopener noreferrer" class="contact-card glass-card magnetic">
+          <div class="cc-icon"><i class="fa-brands fa-github"></i></div>
+          <div class="cc-text">
+            <span class="cc-label">GitHub</span>
+            <span class="cc-value">Lahari0603</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square cc-arrow"></i>
+        </a>
+      </div>
+
+      <!-- Contact Message Form -->
+      <div class="contact-form-wrap glass-card reveal">
+        <form class="contact-form" id="contactForm">
+          <h3>Send a Quick Message</h3>
+          <p class="form-sub">Drop a line for interview invitations, project collaborations, or inquiries.</p>
+          <div class="form-group">
+            <label for="formName">Your Name</label>
+            <input type="text" id="formName" name="name" placeholder="e.g. Alex Morgan" required>
+          </div>
+          <div class="form-group">
+            <label for="formEmail">Your Email</label>
+            <input type="email" id="formEmail" name="email" placeholder="e.g. alex@company.com" required>
+          </div>
+          <div class="form-group">
+            <label for="formSubject">Subject</label>
+            <input type="text" id="formSubject" name="subject" placeholder="e.g. Full Stack Developer Opportunity" required>
+          </div>
+          <div class="form-group">
+            <label for="formMessage">Message</label>
+            <textarea id="formMessage" name="message" rows="4" placeholder="Hello Laharika, I reviewed your portfolio and would like to discuss..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary magnetic" id="formSubmitBtn">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+          <div class="form-status" id="formStatus" style="display: none;"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-wordmark">&lt;L·R/&gt; Laharika Relangi</span>
+      <span class="footer-title">Aspiring Full Stack Developer · Computer Science Engineering</span>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#internships">Internships</a>
+      <a href="#projects">Projects</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="footer-social">
+      <a href="mailto:relangilaharika@gmail.com" aria-label="Email Laharika" title="Email Laharika">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/laharika-relangi-38b575292/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn Profile">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/Lahari0603" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" title="GitHub Profile">
+        <i class="fa-brands fa-github"></i>
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Laharika Relangi · Amalapuram, Andhra Pradesh, India. All Rights Reserved.</span>
+    <span class="footer-crafted">Crafted with modern web technologies &amp; passion for code <i class="fa-solid fa-heart" style="color:#ff7675"></i></span>
+  </div>
+</footer>
+
+<!-- PDF.js for crisp native canvas document viewing -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
