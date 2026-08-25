@@ -821,7 +821,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Grid overlay */
 .hero-grid {
   position: absolute;
-  inset: 0;
+  inset: -6%;
+  width: 112%;
+  height: 112%;
   background-size: 60px 60px;
   background-image:
     linear-gradient(to right, var(--line) 1px, transparent 1px),
@@ -830,6 +832,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
   z-index: 2;
   pointer-events: none;
+  animation: heroGridCinematic 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes heroGridCinematic {
+  0% {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: scale(1.04) translate3d(-15px, -10px, 0);
+  }
+  100% {
+    transform: scale(1.02) translate3d(15px, 12px, 0);
+  }
 }
 
 /* Hero Scenes */
